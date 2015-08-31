@@ -1,0 +1,57 @@
+<div class="page">
+  <div class="pageContent">
+    <form method="post" action="{config['website']}/sell_edit.php?{bf_id}&action=edit_commit" class="pageForm required-validate" onsubmit="return validateCallback(this, navTabAjaxDone);">
+  
+    <div class="pageFormContent" layoutH="56">
+
+
+      <p >
+	<label>产品列表：</label>
+	<select name="cp_id">
+	<!-- $products AS $pr -->
+	  <option value="{pr[id]}">{pr[name]}</option>
+	<!-- END -->
+	</select>
+      </p>
+
+      <p>
+	<label>拜访方式：</label>
+	<select name="visit_type">
+	  <option value="{baifang[visit_type]}"><!-- IF[$baifang['visit_type'] == 0] -->电话<!--else --> 面谈<!-- END --></option>
+	  <option value="0">电话</option>
+	  <option value="1">面谈</option>
+	</select>
+      </p>
+
+      <p>
+	<label>拜访地点：</label>
+	<input name="place" class="required" type="text" size="30" value="{baifang[place]}" />
+	</select>
+      </p>
+
+      <p>
+	<label>拜访时间：</label>
+	<input name="visit_time" class="required" type="text" size="30" value="{baifang[visit_time]}" />
+      </p>
+
+<p>
+  <label>是否完成：</label>
+
+	 完成<input name="is_success" type="radio" value="1"  <!-- IF[ $baifang['is_success'] == 1  ] --> checked="checked"  <!-- END -->  /> 
+	还需努力<input name="is_success" type="radio" value="0"  <!-- IF[ $baifang['is_success'] == 0  ] --> checked="checked"  <!-- END -->  /> 
+</p>
+
+
+
+      <p>
+	<label>备注：</label>
+	<textarea rows="5" cols="50" class="textInput required" name="remark">{baifang[remark]}</textarea>
+      </p>
+    </div>
+    <div class="formBar">
+      <ul>
+	<li><div class="buttonActive"><div class="buttonContent"><button type="submit">保存</button></div></div></li>
+      </ul>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,38 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>智富联盟客户管理系统</title>
+
+<link href="{config[website]}/tpl/css/login.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body style="background-color:#cccccc;">
+<div id="wrap">
+<div id="login">
+  <div class="login_inner">
+    <!-- <form name="user_info" onsubmit="return m_login();" > -->
+    <form name="user_info" onsubmit="m_login(); return false;" >
+        <p>
+            <label>帐&nbsp;&nbsp;号：</label>
+            <input class="input" name="username" size="20" type="text" />
+        </p>
+        <p>
+            <label>密&nbsp;&nbsp;码：</label>
+            <input class="input" name="password" size="20" type="password" />
+        </p>
+        <p>
+            <label>验证码：<input id="absmiddle"  name="code" size="10" type="code" /><img id = "imgcode" align="absmiddle" src="code.php" onclick=" newcode('{config[website]}/code.php?timeamp=') "><a style="font-size:12px;" href="javascript:newcode('{config[website]}/code.php?timeamp=')">不清楚?</a></label>
+            
+        </p>
+        <p style="height:10px;">&nbsp;<span id="msg" class="msg"></span> </p>
+        <p class="submit">
+            <input id="button-primary" class="button-primary" name="登录" type="submit"  value="登录" />
+        </p>
+        </form>
+    </div>
+</div>
+</div>
+</body>
+<script type="text/javascript" src='{config[website]}/tpl/js/login.js'></script>
+</html>

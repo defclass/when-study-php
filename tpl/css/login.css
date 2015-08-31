@@ -1,0 +1,16 @@
+@charset "utf-8";
+/* CSS Document */
+
+*{padding:0; margin:0; font-family:"宋体"; font-size:12px;}
+ul,dl{list-style:none;}
+.clear{clear:both;}
+a{text-decoration:none; outline:none;}
+img{ border:none;}
+
+#wrap{background:url(../images/wrad_bg_04.jpg) repeat-x; height:775px;}
+#login{ background:url(../images/lo_bg_02.jpg) no-repeat; height:775px; width:1071px; margin:0 auto;}
+.login_inner{ width:320px; padding:270px 0 0 500px;}
+.login_inner p{height:30px;}
+.login_inner p .input{width:200px; height:25px;}
+#absmiddle{margin-left:6px;}
+.button-primary{height:25px; margin-left:60px; width:60px;margin-top: 10px;}

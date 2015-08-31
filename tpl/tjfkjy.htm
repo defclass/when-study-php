@@ -1,0 +1,30 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>龙虎榜</title>
+		<style type="text/css">
+			.home{ overflow:hidden;zoom:1; margin:0 auto; padding-left:20px; margin:20px; width:700px;}
+			.tjan{border:1px #0054a4 solid;background-repeat:no-repeat;width:60px;font-weight:bold;background:#1a68bd; color:#fff; line-height:18px;_line-height:18px; _height:20px;}
+			.tijiao{ margin-top:10px;width:500px;}
+			.dym{ font-size:14px; color:#1a68bd; font-weight:bold; width:50px; float:left; overflow:hidden;zoom:1;}
+			.lhb{ font-size:16px; color:#ff631d; font-weight:bold;}
+		</style>
+	</head>
+
+	<body>
+		<form method="post" action="{config['website']}/tjfkjy.php?action=query&do=commit" class="pageForm " onsubmit="return validateCallback(this, navTabAjaxDone);">
+			<div class="home">
+				<div><span class="dym">标题：</span>
+					<span class=""><input name="headline" type="text" value="" id=""  size="40"/></span>
+				</div>
+				<div class="tijiao"><div class="dym">内容：</div>
+					<span class=""><textarea name="content" id="" cols="60" rows="10"></textarea></span>
+				</div>
+			
+
+			</div>
+			<div align="center" class="tijiao" ><button type="submit" class="tjan">保存</button></div>
+		</form>
+	</body>
+</html>

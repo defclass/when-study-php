@@ -1,0 +1,97 @@
+<form id="pagerForm" method="post" action="sell_list.php?action=search">
+  <input type="hidden" name="pageNum" value="1" />
+  <input type="hidden" name="numPerPage" value="10" />
+  <input type="hidden" name="admin_name" value="{admin_name}"/>
+  <input type="hidden" name="user_name" value="{user_name}"/>
+  <input type="hidden" name="user_tel" value="{user_tel}"/>
+  <input type="hidden" name="time_start" value="{time_start}"/>
+  <input type="hidden" name="time_over" value="{time_over}"/>
+</form>
+
+<div class="page">
+  <div class="pageHeader">
+    <form onsubmit="return navTabSearch(this);" action="sell_manage.php?action=search" method="post"> 
+    <div class="searchBar">
+      <table class="searchContent">
+	<tr>
+	  <td>
+	    员工名称:<input type="text" name="admin_name" size="12" value=""/>
+	  </td>
+	  <td>
+	    客户名称:<input type="text" name="user_name" size="12" value=""/>
+	  </td>
+	  <td>
+	    客户电话:<input type="text" name="user_tel" size="12" value=""/>
+	  </td>
+	  <td>
+	    拜访时间:
+	    <input type="text" name="time_start" size="9" class="date" value=""/>
+	    -<input type="text" name="time_over" size="9" class="date"  value=""/>
+	  </td>
+	  <td>
+	  </td>					
+	  <td>
+	  </td>
+	  <td>
+	  </td>
+	  <td>
+     
+	    <div class="buttonActive"><div class="buttonContent"><button type="submit">搜索</button></div></div>
+	  </td>
+	</tr>
+      </table>
+    </div>
+  </div>
+  <div class="pageContent">
+    <!-- <div class="panelBar"> -->
+      <!-- <ul class="toolBar"> -->
+      <!-- <li><a class="add" href="{config[website]}/sell_new.php" target="dialog" mask="true"  width="800" height="400"><span>添加拜访记录</span></a></li> -->
+      <!--   <li><a class="edit" href="{config[website]}/sell_edit.php?{param}" target="dialog" mask="true"  width="800" height="400"><span>查看</span></a></li> -->
+      <!--   <li><a class="delete" href="{config[website]}/sell_del.php?{param}" target="ajaxTodo" title="确定要删除吗?"><span>删除</span></a></li> -->
+      <!-- </ul> -->
+    <!-- </div> -->
+    <table class="list" layouth="91" style="width:1000px;">
+      <thead>
+	<tr>
+	  <th align="center">拜访时间</th>
+          <th align="center">客户名称</th>
+	  <th align="center">所属员工</th>
+	  <th align="center">产品名称</th>
+
+	  <th align="center">拜访方式</th>	
+	  <!-- <th align="center">拜访地点</th> -->
+	
+ 
+	  <th align="center">拜访记录</th>
+	  <th align="center">提醒跟单员工</th>
+	</tr>
+      </thead>
+      <tbody>			
+	<!-- $bf_recs as  $bf_rec-->
+	<tr target="sid_user" rel="{bf_rec[id]}" >
+	  <td align="center">{bf_rec[visit_time]}</td>
+          <td align="center"><a class="edit" href="{config[website]}/sell_manage_detail.php?cust_id={bf_rec[cust_id]}" target="dialog" mask="true"  width="800" height="400">{bf_rec[user_name]}</a></td>
+	  <td align="center">{bf_rec[admin_name]}</td>		
+	  <td align="center">{bf_rec[product_name]}</td>
+
+	  <td align="center"><!-- if [ $bf_rec['visit_type'] == 1 ] -->面谈<!-- else --> 电话 <!--end --> </td>  
+	  <!-- <td align="center">{bf_rec[place]}</td> -->
+
+
+	  <td align="center"><!--if(empty( $bf_rec['remark'])) -->无备注<!-- else -->{bf_rec['remark']} <!-- end --></td>
+	  <td align="center"><a class="add_alert" href="{config[website]}/alert.php?action=new&cust_id={bf_rec[cust_id]}&staff_id={bf_rec[admin_id]}" target="dialog" mask="true"  width="800" height="200"><span>添加提醒</span></a></td>
+	</tr>
+	<!-- end -->
+      </tbody>
+    </table>
+    <div class="panelBar">
+      <div class="pages">
+	<span>共{total}条</span>
+			</div>
+			
+			<!-- <div class="pagination" targetType="navTab" totalCount="{$total}" numPerPage="24" pageNumShown="10" currentPage="{pageNum}"></div> -->
+			<div class="pagination" targetType="navTab" totalCount="{total}" numPerPage="{per_num}" pageNumShown="10" currentPage="{current_page}"></div>
+
+    </div>
+  </div>
+</div>

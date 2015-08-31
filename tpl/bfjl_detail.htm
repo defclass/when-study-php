@@ -1,0 +1,32 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+</head>
+
+<body>
+ <!-- if(empty($bf_recs)) -->
+  无拜访记录
+ <!-- else -->
+ <div style=" height:361px; overflow:scroll; width:790px;">
+<table cellpadding="0" cellspacing="0" border="1" width="770" bordercolor="#7fcdf6" style="font-family:'微软雅黑';">
+  <tr style="font-size:14px; height:30px; width:770px; line-height:30px; font-weight:bold; text-align:center;">
+    <td style="width:60px; white-space:nowrap; font-weight:bold;">拜访人</td>
+    <td width="100" style="font-weight:bold;">时间</td>
+    <td style="width:600px; font-weight:bold; word-wrap:break-word;word-break:break-all;">记录</td>
+  </tr>
+  
+  <!-- $bf_recs as $r -->
+  <tr style="font-size:14px; font-weight:bold; width:600px;">
+    <td style="width:60px; white-space:nowrap; padding:5px;" align="center">{r[name]}</td>
+    <td width="100" style="padding:5px;" align="center">{r[visit_time]}</td>
+    <td style="width:600px;  word-wrap:break-word;word-break:break-all;">{r[remark]}</td>
+  </tr>
+  <!-- end -->
+  <!-- end -->
+
+</table>
+</div>
+</body>
+</html>

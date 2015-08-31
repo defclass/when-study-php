@@ -1,0 +1,62 @@
+<form id="pagerForm" method="post" action="staff.php?action=query">
+  <input type="hidden" name="pageNum" value="1" />
+  <input type="hidden" name="numPerPage" value="10" />
+  <input type="hidden" name="admin_name" value="{search_admin_name}"/>
+</form>
+
+<div class="page">
+  <div class="pageHeader">
+ <form onsubmit="return navTabSearch(this);" action="fkjy.php?action=search" method="post">
+    <div class="searchBar">
+      <table class="searchContent">
+	<tr>
+	  <td>
+	    姓名:<input type="text" name="admin_name" size="12" value=""/>
+	  </td>
+	  <td>
+	    <div class="buttonActive"><div class="buttonContent"><button type="submit">检索</button></div></div>
+	  </td>
+	</tr>
+      </table>
+    </div>
+  </div>
+  <div class="pageContent">
+    <div class="panelBar">
+      <ul class="toolBar">				
+	      <li><a class="add" href="{config['website']}/fkjy.php?action=xiangqing&{param}" target="dialog" mask="true" width="800" height="300"><span>查看详情</span></a></li>
+      </ul>
+    </div>
+    <table class="list" layouth="91">
+      <thead>
+	<tr>
+	  <!-- <th align="center">ID</th> -->
+	  <th align="center">姓名</th>
+	  <th align="center">级别</th>
+	  <th align="center">标题</th>
+	  <th align="center">内容</th>
+	  <th align="center">提交时间</th>
+	</tr>
+      </thead>
+      <tbody>		
+	<!-- $fkjy as $f -->
+	<tr target="uid_user" rel="{f[id]}" >
+	  <!-- <td align="center">{f[id]}</td> -->
+	  <td align="center">{f[name]}</td>
+	  <td align="center">{f[level_name]}</td>
+	  <td align="center">{f[headline]}</td>
+	  <td align="center">{f[content]}</td>
+	  <td align="center">{f[s_time]}</td>
+	</tr>		
+	<!-- end -->
+      </tbody>
+    </table>
+    <div class="panelBar">
+      <div class="pages">
+	<span>共{total}条</span>
+      </div>
+      
+      <div class="pagination" targetType="navTab" totalCount="{total}" numPerPage="{numPerPage}" pageNumShown="10" currentPage="{current_page}"></div>
+
+    </div>
+  </div>
+</div>

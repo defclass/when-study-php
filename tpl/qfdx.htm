@@ -1,0 +1,27 @@
+
+<style type="text/css">
+	.qf_home{ overflow:hidden;zoom:1;width:100%; font-size:12px;}
+	.qf_xhx{ border-bottom:1px #accdf4 solid;padding:10px 20px; line-height:30px;}
+	.red{ color:#1a68bd; font-weight:bold}
+	.qf_xhx div{ margin-right:10px;}
+	.qf_qfdx{width:200px;line-height:25px; font-size:14px; text-align:right;float:left;}
+	.qf_fs{border:1px #0054a4 solid;background-repeat:no-repeat;width:60px;font-weight:bold;background:#1a68bd; color:#fff; line-height:18px;_line-height:18px; _height:20px; margin-top:10px; margin-left:530px;_margin-left:590px;}
+</style>
+<div class="qf_home">
+	<form class="pageForm " onsubmit="return validateCallback(this, navTabAjaxDone);" action="qfdx.php?action=query&do=commit" method="post">
+		<div class="qf_xhx">
+			<div class="red qf_qfdx">请选择短信要发送的对象：</div>
+			<div>
+				<span><input name="leixing" type="radio" id="" value="kehu" checked />发送至所有客户</span>
+				<span><input type="radio" name="leixing" id="" value="yuangong" />发送至所有员工</span>
+			</div>
+		</div>
+		<div class="qf_xhx">
+			<div class="red qf_qfdx">请输入发送内容：</div>
+			<div>
+				<textarea name="content" id="" cols="60" rows="10"></textarea>
+				<div align="left" class="tijiao" ><button type="submit" class="qf_fs">发送</button></div>
+			</div>
+		</div>
+	</form>
+</div>

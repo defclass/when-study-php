@@ -1,0 +1,57 @@
+<div class="page">
+	<div class="pageHeader">
+		<div class="searchBar">
+			<table class="searchContent">
+				<tr>
+					<td>
+						用户名:<input type="text" name="username" size="10" value=""/>
+					</td>
+					<td>
+						角色:
+					</td>
+					<td>
+						<div class="buttonActive"><div class="buttonContent"><button type="submit">搜索</button></div></div>
+					</td>
+				</tr>
+			</table>
+		</div>
+	</div>
+	<div class="pageContent">
+		<div class="panelBar">
+			<ul class="toolBar">				
+				<li><a class="add" href="user_new.htm" target="dialog" mask="true"><span>添加</span></a></li>
+				<li><a class="edit" href="user_edit.htm" target="dialog" mask="true"><span>修改</span></a></li>
+				<li><a class="delete" href="" target="ajaxTodo"  title="确定要删除吗?"><span>删除</span></a></li>
+				<li class="line">line</li>
+				
+			</ul>
+		</div>
+		<table class="list" layouth="90" style="width:800px">
+			<thead>
+				<tr>
+					<th align="center">ID</th>
+					<th align="center">职称</th>
+					<th align="center">创建时间</th>
+					<th align="center">更新时间</th>
+				</tr>
+			</thead>
+			<tbody>			
+			
+				<tr target="id" rel="" >
+					<td align="center">1</td>
+					<td align="center">职称</td>
+					<td align="center">创建时间</td>
+					<td align="center">更新时间</td>
+				</tr>			
+			</tbody>
+		</table>
+		<div class="panelBar">
+			<div class="pages">
+				<span>共{$total}条</span>
+			</div>
+			
+			<div class="pagination" targetType="navTab" totalCount="{$total}" numPerPage="20" pageNumShown="10" currentPage="{$pageNum}"></div>
+
+		</div>
+	</div>
+</div>

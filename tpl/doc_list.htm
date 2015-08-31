@@ -1,0 +1,58 @@
+
+<div class="page">
+	<div class="pageHeader">
+		<div class="searchBar">
+			<table class="searchContent">
+				<tr>
+					<td>
+						文档标题:<input type="text" name="title" size="12" value=""/>
+					</td>
+					<td>
+						发布时间:<input type="text" name="time_start" size="9" class="date" readonly="true" value=""/>
+						-<input type="text" name="time_over" size="9" class="date" readonly="true" value=""/>
+					</td>
+					<td>
+					<div class="buttonActive"><div class="buttonContent"><button type="submit">搜索</button></div></div>
+					</td>
+				</tr>
+			</table>
+		</div>
+	</div>
+	<div class="pageContent">
+		<div class="panelBar">
+			<ul class="toolBar">				
+				<li><a class="edit" href="doc_show.htm" target="dialog" mask="true"><span>明细</span></a></li>
+				<li class="line">line</li>
+				<li><a class="add" href="doc_new.htm" target="dialog" mask="true" width=860 height=420><span>添加</span></a></li>
+				<li><a class="edit" href="doc_edit.htm" target="dialog" mask="true" width=860 height=420><span>修改</span></a></li>
+				<li><a class="delete" href="" target="ajaxTodo"  title="确定要删除吗?"><span>删除</span></a></li>
+			</ul>
+		</div>
+		<table class="list" layouth="91" style="width:820px;">
+			<thead>
+				<tr>
+					<th align="center">ID</th>
+					<th align="center">分类</th>
+					<th align="center">标题</th>
+					<th align="center">发布时间</th>
+				</tr>
+			</thead>
+			<tbody>			
+				<tr target="id" rel="" >
+					<td align="center">1</td>
+					<td align="center">分类</td>
+					<td align="center">标题</td>
+					<td align="center">发布时间</td>
+				</tr>			
+			</tbody>
+		</table>
+		<div class="panelBar">
+			<div class="pages">
+				<span>共{$total}条</span>
+			</div>
+			
+			<div class="pagination" targetType="navTab" totalCount="{$total}" numPerPage="20" pageNumShown="10" currentPage="{$pageNum}"></div>
+
+		</div>
+	</div>
+</div>

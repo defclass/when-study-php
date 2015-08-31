@@ -1,0 +1,17 @@
+<div class="page">
+
+    
+    <h1 style="border-bottom:1px dashed #ccc; line-height:25px;">预约提醒</h1>
+
+    <form method="post" action="{config['website']}/message.php?action=add&admin_id={arr[staff_id]}&cust_id={arr[cust_id]}" class=" required-validate" onsubmit="return validateCallback(this, navTabAjaxDone);">
+      <table width="600" border="0" style="padding-top:20px;">
+	<tr>
+	  <td width="120" style="padding-left:20px;">预约时间: <input style="float:right;" type="text"  name="time" size="9" class="date required" value=""/></td>
+	  <td align="center">提醒文字: <input  typy="text"  name="msg" class="required"></td>
+	  <td align="center"><button type="submit" id="but_tx" name="">提醒</button></td>
+	</tr>
+      </table>
+    </form>
+ 
+
+</div>

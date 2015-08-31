@@ -1,0 +1,24 @@
+@charset "utf-8";
+/* CSS Document */
+
+*{padding:0; margin:0; font-family:"宋体"; font-size:12px;}
+ul,dl{list-style:none;}
+.clear{clear:both;}
+a{text-decoration:none; outline:none;}
+img{ border:none;}
+
+
+
+/*#wrap{ width:100%; background:#f0f0f0; height:668px}*/
+
+.shangcuan{width:1000px;}
+shangcuan_nav{border:1px #B8D0D6 solid; height:30px; padding-top:18px; background:url(../images/pageHeader_bg1.png) repeat-x;}
+.shangcuan_nav UL LI{width:100px; height:29px; padding-top:10x; line-height:29px; text-align:center; color:#03C; font-size:14px;} 
+.gs_list{float:left; cursor:pointer; margin-right: 20px;}
+.dianji{ border:1px #006 solid;}
+
+
+#no1 span,#no2 span,#no3 span,#no4 span,#no5 span{width:1000px; padding-top:5px; border:1px #B8D0D6 solid; height:25px; margin-top:10px; background-color:#EFEFEF; display:block;}
+#no1 span form,#no2 span form,#no3 span form,#no4 span form,#no5 span form{padding-left:50px;}
+#no1 ul,#no2 ul,#no3 ul,#no4 ul,#no5 ul{width:950px;}
+#no1 ul li,#no2 ul li,#no3 ul li,#no4 ul li,#no4 ul li,#no5 ul li{height:40px; color:#6596e8; margin-top:10px;}

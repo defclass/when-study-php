@@ -1,0 +1,61 @@
+
+<div class="page">
+	<div class="pageHeader">
+		<div class="searchBar">
+			<table class="searchContent">
+				<tr>
+					<td>
+						名称:<input type="text" name="title" size="10"/>
+					</td>
+					<td>
+						类型
+					</td>
+					<td>
+						<div class="buttonActive"><div class="buttonContent"><button type="submit">搜索</button></div></div>
+					</td>
+				</tr>
+			</table>
+		</div>
+	</div>
+	<div class="pageContent">
+		<div class="panelBar">
+			<ul class="toolBar">				
+				<li><a class="add" href="config_new.htm" target="dialog" mask="true"><span>添加</span></a></li>
+				<li><a class="edit" href="config_edit.htm" target="dialog" mask="true"><span>修改</span></a></li>
+				<li><a class="delete" href="?action=config&do=del&id={id}" target="ajaxTodo" title="配置关联项目很多,不建议删除!<br/>您针对确定要删除吗?"><span>删除</span></a></li>
+				<li class="line">line</li>
+				
+			</ul>
+		</div>
+		<table class="list" layouth="90" style="width:800px">
+			<thead>
+				<tr>
+					<th align="center">ID</th>
+					<th align="center">类型</th>
+					<th align="center">名称</th>
+					<th align="center">创建时间</th>
+					<th align="center">更新时间</th>
+				</tr>
+			</thead>
+			<tbody>			
+			<!--{foreach from=$list item=row}-->
+				<tr target="id" rel="<!--{$row.id}-->" >
+					<td><!--{$row.id}--></td>
+					<td><!--{$row.type_cn}--></td>
+					<td><!--{$row.title}--></td>
+					<td><!--{$row.created_at}--></td>
+					<td><!--{$row.updated_at}--></td>
+				</tr>			
+			<!--{/foreach}-->
+			</tbody>
+		</table>
+		<div class="panelBar">
+			<div class="pages">
+				<span>共{$total}条</span>
+			</div>
+			
+			<div class="pagination" targetType="navTab" totalCount="{$total}" numPerPage="20" pageNumShown="10" currentPage="{$pageNum}"></div>
+
+		</div>
+	</div>
+</div>

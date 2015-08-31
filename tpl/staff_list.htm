@@ -1,0 +1,68 @@
+<form id="pagerForm" method="post" action="staff.php?action=query">
+  <input type="hidden" name="pageNum" value="1" />
+  <input type="hidden" name="numPerPage" value="10" />
+  <input type="hidden" name="admin_name" value="{search_admin_name}"/>
+</form>
+
+<div class="page">
+  <div class="pageHeader">
+ <form onsubmit="return navTabSearch(this);" action="staff.php?action=search" method="post">
+    <div class="searchBar">
+      <table class="searchContent">
+	<tr>
+	  <td>
+	    姓名:<input type="text" name="admin_name" size="12" value=""/>
+	  </td>
+	  <td>
+	    <div class="buttonActive"><div class="buttonContent"><button type="submit">检索</button></div></div>
+	  </td>
+	</tr>
+      </table>
+    </div>
+  </div>
+  <div class="pageContent">
+    <div class="panelBar">
+      <ul class="toolBar">				
+	<li><a class="add" href="{config['website']}/staff.php?action=add" target="dialog" mask="true" width="800" height="300"><span>添加下属</span></a></li>
+	<li><a class="edit" href="{config['website']}/staff.php?action=update&{param}" target="dialog" mask="true" width="800" height="300"><span>修改</span></a></li>
+	<li><a class="delete" href="{config['website']}/staff.php?action=del&{param}" target="ajaxTodo"  title="确定要删除吗?"><span>删除</span></a></li>
+      </ul>
+    </div>
+    <table class="list" layouth="91">
+      <thead>
+	<tr>
+	  <!-- <th align="center">ID</th> -->
+	  <th align="center">姓名</th>
+	  <th align="center">级别</th>
+	<!--  <th align="center">上司</th>-->
+	  <th align="center">手机号码</th>
+	  <th align="center">座机号码</th>
+	  <th align="center">最后登陆时间</th>
+	  <th align="center">最后登陆IP</th>
+	</tr>
+      </thead>
+      <tbody>		
+	<!-- $staffs as $staff -->
+	<tr target="uid_user" rel="{staff[id]}" >
+	  <!-- <td align="center">{staff[id]}</td> -->
+	  <td align="center">{staff[name]}</td>
+	  <td align="center">{staff[level_name]}</td>
+	  <!--<td align="center">{staff[f_name]}</td>-->
+	  <td align="center">{staff[tel]}</td>
+	  <td align="center">{staff[phone]}</td>
+	  <td align="center">{staff[lasttime]}</td>
+	  <td align="center">{staff[lastip]}</td>
+	</tr>		
+	<!-- end -->
+      </tbody>
+    </table>
+    <div class="panelBar">
+      <div class="pages">
+	<span>共{total}条</span>
+      </div>
+      
+      <div class="pagination" targetType="navTab" totalCount="{total}" numPerPage="{numPerPage}" pageNumShown="10" currentPage="{current_page}"></div>
+
+    </div>
+  </div>
+</div>

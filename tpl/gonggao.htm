@@ -1,0 +1,57 @@
+<form id="pagerForm" method="post" action="gonggao.php?action=search">
+  <input type="hidden" name="pageNum" value="1" />
+  <input type="hidden" name="headline" value="{_POST[headline]}"/>
+</form>
+
+<div class="page">
+  <div class="pageHeader">
+ <form onsubmit="return navTabSearch(this);" action="gonggao.php?action=search" method="post">
+    <div class="searchBar">
+      <table class="searchContent">
+	<tr>
+	  <td>
+	    公告标题：<input type="text" name="headline" size="12" value=""/>
+	  </td>
+	  <td>
+	    <div class="buttonActive"><div class="buttonContent"><button type="submit">检索</button></div></div>
+	  </td>
+	</tr>
+      </table>
+    </div>
+  <div class="pageContent">
+    <div class="panelBar">
+      <ul class="toolBar">				
+	      <li><a class="add" href="{config['website']}/gonggao.php?action=add" target="dialog" mask="true" width="800" height="300"><span>增加新公告</span></a></li>
+	      <li><a class="edit" href="{config['website']}/gonggao.php?action=edit&{param}" target="dialog" mask="true" width="800" height="300"><span>编辑公告</span></a></li>
+
+      </ul>
+    </div>
+    <table class="list" layouth="91">
+      <thead>
+	<tr>
+	  <th align="center">公告标题</th>
+	  <th align="center">内容预览</th>
+	  <th align="center">发布人</th>
+	  <th align="center">发布时间</th>
+	</tr>
+      </thead>
+      <tbody>		
+	<!-- $gg as $g-->
+	<tr target="sid_user" rel="{g[wz_id]}" >
+	  <td align="center">{g[headline]}</td>
+	  <td align="center">{g[content]}</td>
+	  <td align="center">{g[author]}</td>
+	  <td align="center">{g[date]}</td>
+	</tr>		
+	<!-- end -->
+      </tbody>
+    </table>
+    <div class="panelBar">
+      <div class="pages">
+	<span>共{total}条</span>
+      </div>
+      
+      <div class="pagination" targetType="navTab" totalCount="{total}" numPerPage="{numPerPage}" pageNumShown="10" currentPage="{current_page}"></div>
+
+    </div>
+  </div>

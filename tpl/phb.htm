@@ -1,0 +1,54 @@
+<form id="pagerForm" method="post" action="staff.php?action=query">
+  <input type="hidden" name="pageNum" value="1" />
+  <input type="hidden" name="numPerPage" value="10" />
+  <input type="hidden" name="admin_name" value="{search_admin_name}"/>
+</form>
+
+<div class="page">
+  <div class="pageContent">
+    <table class="list" layouth="91">
+      <thead>
+	<tr>
+	  <th align="center">分公司名</th>
+	  <th align="center">营业部数量</th>
+	  <th align="center">总监人数</th>
+	  <th align="center">经理人数</th>
+	  <th align="center">顾问人数</th>
+	  <th align="center">待邀约客户数</th>
+	  <th align="center">已面谈客户数</th>
+	  <th align="center">已参加财商公开课客户数</th>
+	  <th align="center">已参加产品发布会客户数</th>
+	  <th align="center">智富财商学员数</th>
+	  <th align="center">存在疑问客户数</th>
+	  <th align="center">已成交客户数</th>
+	</tr>
+      </thead>
+      <tbody>		
+	<!-- $phb_raw as $k => $p-->
+	<tr target="uid_user" rel="{p[id]}" >
+	  <td align="center">{p[name]}</td>
+	  <td align="center">{p[3]}</td>
+	  <td align="center">{p[4]}</td>
+	  <td align="center">{p[5]}</td>
+	  <td align="center">{p[10]}</td>
+	  <td align="center">{p[20]}</td>
+	  <td align="center">{p[30]}</td>
+	  <td align="center">{p[40]}</td>
+	  <td align="center">{p[50]}</td>
+	  <td align="center">{p[60]}</td>
+	  <td align="center">{p[70]}</td>
+	  <td align="center">{p[80]}</td>
+	</tr>	
+	<!-- end -->
+      </tbody>
+    </table>
+    <div class="panelBar margin_top">
+      <div class="pages">
+	<span>共{total}条</span>
+      </div>
+      
+      <!-- <div class="pagination" targetType="navTab" totalCount="{total}" numPerPage="{numPerPage}" pageNumShown="10" currentPage="{current_page}"></div> -->
+
+    </div>
+  </div>
+</div>

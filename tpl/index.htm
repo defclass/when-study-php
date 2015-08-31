@@ -1,0 +1,279 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=7" />
+    <title>智富联盟内部客户管理系统 V1.0</title>
+    <link href="{config['website']}/tpl/themes/default/style.css" rel="stylesheet" type="text/css" />
+    <link href="{config['website']}/tpl/themes/css/core.css" rel="stylesheet" type="text/css" />
+    <link href="{config['website']}/tpl/themes/css/print.css" rel="stylesheet" type="text/css" media="print"/>
+    <!--[if IE]>
+	<link href="{config['website']}/tpl/themes/css/ieHack.css" rel="stylesheet" type="text/css" media="screen"/>
+	<![endif]-->
+    <script src="{config['website']}/tpl/themes/javascripts/speedup.js" type="text/javascript"></script>
+    <script src="{config['website']}/tpl/themes/javascripts/jquery-1.7.2.min.js" type="text/javascript"></script>
+    <script src="{config['website']}/tpl/themes/javascripts/jquery.cookie.js" type="text/javascript"></script>
+    <script src="{config['website']}/tpl/themes/javascripts/jquery.validate.js" type="text/javascript"></script>
+    <script src="{config['website']}/tpl/themes/javascripts/jquery.bgiframe.js" type="text/javascript"></script>
+    <script src="{config['website']}/tpl/themes/javascripts/dwz.min.js" type="text/javascript"></script>
+    <!-- <script src="{config['website']}/tpl/js/index.js" type="text/javascript"></script> -->
+    <script src="{config['website']}/tpl/themes/xheditor/xheditor-1.1.12-zh-cn.min.js" type="text/javascript"></script>
+    <script type="text/javascript">
+      $(function(){
+      DWZ.init("{config['website']}/tpl/themes/dwz.frag.xml", {
+      debug:false,	// 调试模式 【true|false】
+      callback:function(){
+      initEnv();
+      $("#themeList").theme({themeBase:"tpl/themes"});
+      }
+      });
+      });
+      //清理浏览器内存,只对IE起效,FF不需要
+      if ($.browser.msie) {
+      window.setInterval("CollectGarbage();", 10000);
+      }
+    </script>
+  </head>
+
+  <body scroll="no">
+    <div id="layout">
+      <div id="header">
+	<div class="headerNav">
+	  <a class="logo" href="javascript:void(0)">标志</a>
+	  <ul class="nav">
+	    <li><a href="#">欢迎回来：{name}</a></li>
+	    <!-- <li><a href="{config['website']}/tpl/#" target="dialog" mask="true">修改密码</a></li> -->
+	    <li><a href="{config['website']}/index.php?action=logout">退出</a></li>
+	  </ul>
+	</div>		
+      </div>
+
+      <div id="leftside">
+	<div id="sidebar_s">
+	  <div class="collapse">
+	    <div class="toggleCollapse"><div></div></div>
+	  </div>
+	</div>
+	<div id="sidebar">
+	  <div class="toggleCollapse"><h2>主菜单</h2><div>收缩</div></div>
+
+	  <div class="accordion" fillSpace="sidebar">
+	    <div class="accordionHeader">
+	      <h2><span>Folder</span>核心功能</h2>
+	    </div>
+	    <div class="accordionContent">
+	      <ul class="tree treeFolder">
+		
+		<li>
+		  <!--if(in_array($level_id,array(1,2,3,4,5,6)))-->
+		  <a>客户管理</a>
+		  <ul>	
+		    <li><a href="{config['website']}/gonggongku.php?action=query" target="navTab" rel="public_info">公共客户库</a></li>
+		    <li><a href="{config['website']}/kehuku.php?action=query" target="navTab" rel="syk">私有客户库</a></li>
+		    <li><a href="{config['website']}/kehuku.php?action=query&ku_id=10" target="navTab" rel="dyy">待邀约客户库</a></li>
+		    <li><a href="{config['website']}/kehuku.php?action=query&ku_id=20" target="navTab" rel="ymt">已面谈客户库</a></li>
+		    <li><a href="{config['website']}/kehuku.php?action=query&ku_id=30" target="navTab" rel="csgkk">已参加财商公开课客户</a></li>
+		    <li><a href="{config['website']}/kehuku.php?action=query&ku_id=40" target="navTab" rel="kpfbh">已参加产品发布会客户</a></li>
+		    <li><a href="{config['website']}/kehuku.php?action=query&ku_id=50" target="navTab" rel="zfcsxy">智富财商学员</a></li>
+		    <li><a href="{config['website']}/kehuku.php?action=query&ku_id=60" target="navTab" rel="yjld">已见领导或专家</a></li>
+		    <li><a href="{config['website']}/kehuku.php?action=query&ku_id=70" target="navTab" rel="czyw">存在疑问客户</a></li>
+		    <li><a href="{config['website']}/kehuku.php?action=query&ku_id=80" target="navTab" rel="ycj">已成交客户</a></li>
+		    
+		    <!-- <li><a href="{config['website']}/sell_gaikuang.php" target="navTab" rel="sell">拜访概况</a></li> -->
+		    <li><a href="{config['website']}/sell_list.php" target="navTab" rel="sell">拜访记录管理</a></li>
+		    <!-- <li><a href="{config['website']}/sell_manage.php" target="navTab" rel="sell">拜访记录</a></li> -->
+		    <!-- <li><a href="{config['website']}/tpl/doc_list.htm" target="navTab" rel="doc">群发短信</a></li> -->
+
+		  </ul>
+		</li>
+		<!--end-->
+
+		<!--if(in_array($level_id,array(1,2,3,4,5)))-->
+		<li><a>员工管理</a>
+		  <ul>	
+		    <li><a href="{config['website']}/staff.php?action=query" target="navTab" rel="staff">下属管理</a></li>
+		    <!--if(in_array($level_id,array(1,2)))-->
+		    <li><a href="{config['website']}/staff_check.php?action=query" target="navTab" rel="dshyg">待审核员工</a></li>
+		    <!--end-->
+		  </ul>
+		</li>
+		<!--end-->
+
+		<!--if(in_array($level_id,array(1,2)))-->
+                <li><a>营销中心</a>
+		  <ul>	
+		    <li><a href="{config['website']}/phb.php?action=query" target="navTab" rel="lhb">排行榜</a></li>
+		    <!--if(in_array($level_id,array(1)))-->
+		    <li><a href="{config['website']}/gonggao.php?action=query" target="navTab" rel="fgg">公告管理</a></li>
+		    <li><a href="{config['website']}/lhb.php?action=query" target="navTab" rel="lhb">业绩龙虎榜</a></li>
+		    <li><a href="{config['website']}/fkjy.php?action=query" target="navTab" rel="fkjy">反馈建议</a></li>
+		    <li><a href="{config['website']}/qfdx.php?action=query" target="navTab" rel="qfdx">群发短信</a></li>
+		    <!--end-->
+		  </ul>
+		</li>
+		<!--end-->
+
+
+		<li><a>共享专区</a>
+		  <ul>	
+		    <li><a href="{config['website']}/gxzq.php?action=query&comp_id=1" target="navTab" rel="updown">集团公司</a></li>
+		    <li><a href="{config['website']}/gxzq.php?action=query&comp_id=2" target="navTab" rel="updown">融易投</a></li>
+		    <li><a href="{config['website']}/gxzq.php?action=query&comp_id=3" target="navTab" rel="updown">智富东方</a></li>
+		    <li><a href="{config['website']}/gxzq.php?action=query&comp_id=4" target="navTab" rel="updown">智富泰达</a></li>
+		    <li><a href="{config['website']}/gxzq.php?action=query&comp_id=5" target="navTab" rel="updown">市场部</a></li>
+
+		    <!--if(in_array($level_id,array(1)))-->
+		    <li><a href="{config['website']}/xzjl.php?action=query" target="navTab" rel="updown">文件下载记录</a></li>
+		    <!--end-->
+		  </ul>
+		</li>
+
+                <li><a>设置</a>
+		  <ul>	
+		    <li><a href="{config['website']}/passwd_edit.php" target="navTab" rel="updown">密码修改</a></li>
+
+		    <!--if(in_array($level_id,array(2,3,4,5,6)))-->
+		    <li><a href="{config['website']}/tjfkjy.php?action=query" target="navTab" rel="tjfkjy">反馈建议</a></li>
+		    <!--end-->
+		  </ul>
+		</li>
+	      </ul> 
+	    </div>
+	  </div>
+
+	</div>
+      </div>
+      <div id="container">
+	<div id="navTab" class="tabsPage">
+	  <div class="tabsPageHeader">
+	    <div class="tabsPageHeaderContent">
+	      <ul class="navTab-tab">
+		<li tabid="main" class="main"><a href="javascript:;"><span><span class="home_icon">我的主页</span></span></a></li>
+	      </ul>
+	    </div>
+	    <div class="tabsLeft">left</div>
+	    <div class="tabsRight">right</div>
+	    <div class="tabsMore">more</div>
+	  </div>
+	  <ul class="tabsMoreList">
+	    <li><a href="javascript:;">我的主页</a></li>
+	  </ul>
+	  <div class="navTab-panel tabsPageContent layoutBox">
+	
+       
+
+              <div class="ht_index_nr">
+       
+           <!--<div class="suosou">
+              <div style="width:10%;float:left">
+              	<strong>公司公告：</strong>
+              </div>
+              <div style="width:89%" class="gongsi_gonggao">
+              	<ul>
+                	<li>sdsd</li>
+                    <li>sdsd</li>
+                    <li>sdsd</li>
+                    <li>sdsd</li>
+                </ul>
+              </div>
+
+            </div>-->
+            <div class="suosou">
+              <div><strong>公告：</strong></div>
+              <table width="800" cellpadding="0" cellspacing="0" class="yytx">
+		<!-- $gg as $g -->
+		<tr class="index_alert">
+                  <td width="144" height="30" align="center" valign="middle">{g[author]}</td>
+                  <td width="496" height="30" align="center" valign="middle"><a class="edit" href="{config['website']}/gonggao.php?action=xsgg&wz_id={g['wz_id']}" target="dialog" mask="true" resizable="true" width="1100" height="320">{g[headline]}</a></td>
+                  <td width="158" height="30" align="center" valign="middle">{g[date]}</td>
+       		</tr>
+		<!-- end -->
+              </table>
+            </div>
+
+          	<div class="suosou">
+		  <span><strong>查询是否存在该客户:</strong></span></br>
+		<span>客户名称：<input name="user_name" type="text" value="" id="user_name"  size="30"/></span>&nbsp;&nbsp;
+		<span>客户电话：<input name="user_tel" type="text" value="" id="user_tel"  size="30"/></span>
+                <span><input name="" type="submit"  id="" value="搜索" class="btn"/></span>
+		<span class="msg"></span>
+	</div>
+	<script type="text/javascript">
+		$(function(){
+				$(".btn").live('click',function(e){
+					var un = $("#user_name").val();
+					var ut = $("#user_tel").val();
+					//防止浏览器默认行为
+					e.preventDefault();
+					$.post("info_search.php?action=search",
+						{"user_name":un,"user_tel": ut},
+						function(text){
+						$(".msg").text(text);
+						},"text");//end of $.post
+					});
+
+				});
+</script>
+
+
+
+
+<div class="suosou"><strong>龙虎榜：</strong></br>
+              <table width="570" cellpadding="0" cellspacing="0" class="yytx">
+                <tr>
+		  <td align="center" valign="middle"><strong>第一名：</strong><span class="">{first}</span></td>
+		  <td align="center" valign="middle"><strong>第二名：</strong><span class="">{second}</span></td>
+		  <td align="center" valign="middle"><strong>第三名：</strong><span class="">{third}</span></td>
+                </tr>
+              </table>
+            </div>
+	    <!-- if(!empty($msg)) -->
+	    <div class="suosou">
+              <div><strong>预约提醒：</strong></div>
+              <table width="800" cellpadding="0" cellspacing="0" class="yytx">
+                <tr>
+                  <td width="90" height="30" align="center" valign="middle"><strong>发送人</strong></td>
+                  <td width="90" height="30" align="center" valign="middle"><strong>发送时间</strong></td>
+                  <td width="318" height="30" align="center" valign="middle"><strong>提醒消息</strong></td>
+		  
+		</tr>
+		<!-- $msg as $m-->
+		<tr class="index_alert">
+                  <!-- <td width="90" height="30" align="center" valign="middle" style="display:none;" class="index_alert_id">{m['m_id']}</td> -->
+                  <td width="90" height="30" align="center" valign="middle">{m['name']}</td>
+                  <td width="90" height="30" align="center" valign="middle">{m['s_time']}</td>
+		  <td width="318" height="30" align="center" valign="middle"  ><a href="{config[website]}/message.php?action=syxsxx&mid={m['msg_id']}" target="dialog" mask="true" resizable="true" width="1100" height="320">{m[message]}</a><!-- <span  class="alert_del" style="visibility:hidden;cursor:pointer;">&nbsp&nbsp&nbsp删除</span> --></td>
+                  
+		</tr>
+                <!-- end -->
+              </table>
+            </div>
+                <!-- end -->
+	    
+
+ 
+            <div class="suosou">
+              <span style="margin:5px;line-height:23px;">
+ 		<p>智富联盟内部客户管理系统(Enterprise sales management) V1.0  开发者 : 赵权 黄谦</p>
+	    
+                主要针对移动中销售协同办公的系统.销售可以手持智能android手机,进行服务器提交数据与访问服务器数据。
+	      </br>主要功能有:客户管理,销售管理,考勤打卡,照相上传,培训公告,电话管理,销售统计表,考勤统计表等。</br>(Enterprise sales management),是基于Linux开放性内核和Apache基础上Php+Mysql的智能B/S交互式服务系统。</br>(Enterprise sales management)移动端由移动端采用javascript、html5、ajax、json等技术。</br>中间件层包括函数库,由java开发,android操作系统、中间件、用户界面和应用软件组成。</br>最佳分辨率: 1440x900 最佳浏览器:<a href="http://firefox.com.cn/download/" style="color:red;"> 火狐Firefox</a>
+    </span>
+  </div>
+  <div class="suosou"><strong>功能描述: </strong>1.客户管理;&nbsp;&nbsp;2.拜访管理;&nbsp;&nbsp;3.统计报表;&nbsp;&nbsp;4.群发短信;&nbsp;&nbsp;5.增添下属;</div>
+  <div class="suosou"><strong>服务请联系: </strong> 邮箱:<span style="color:red;">  xyyr2010@hotmail.com&nbsp;&nbsp;QQ: 253846254</span></div>
+</div>
+
+</div>
+</div>
+
+</div>
+</div>
+
+
+
+<div id="footer">Copyright &copy; 2013 <a href="#" target="_blank">智富联盟内部客户管理系统 V1.0  IT部</a> QQ:253846254</div>
+
+
+</body>
+</html>

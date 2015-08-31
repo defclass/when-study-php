@@ -1,0 +1,60 @@
+<form id="pagerForm" method="post" action="xzjl.php?action=search">
+  <input type="hidden" name="pageNum" value="1" />
+  <input type="hidden" name="numPerPage" value="10" />
+  <input type="hidden" name="admin_name" value="{search_admin_name}"/>
+</form>
+
+<div class="page">
+  <div class="pageHeader">
+ <form onsubmit="return navTabSearch(this);" action="xzjl.php?action=search" method="post">
+    <div class="searchBar">
+      <table class="searchContent">
+	<tr>
+	  <td>
+	    员工姓名:<input type="text" name="wjm" size="12" value=""/>
+	  </td>
+	  <td>
+	    <div class="buttonActive"><div class="buttonContent"><button type="submit">检索</button></div></div>
+	  </td>
+	</tr>
+      </table>
+    </div>
+  </div>
+  <div class="pageContent">
+    <div class="panelBar">
+      <ul class="toolBar">				
+	      <li><a class="add" href="{config['website']}/gxzq.php?action=add&comp_id={_GET[comp_id]}" target="dialog" mask="true" width="800" height="300"><span>上传</span></a></li>
+
+      </ul>
+    </div>
+    <table class="list" layouth="91">
+      <thead>
+	<tr>
+	  <th align="center">下载人</th>
+	  <th align="center">下载时间</th>
+	  <th align="center">文件名</th>
+	  <th align="center">所属公司</th>
+	</tr>
+      </thead>
+      <tbody>		
+	<!-- $down_rec as $r -->
+	<tr target="uid_user" rel="{f[id]}" >
+	  <td align="center">{r[name]}</td>
+	  <td align="center">{r[down_time]}</td>
+	  <td align="center">{r[file_name]}</td>
+	  <td align="center">{r[comp_name]}</td>
+	 
+	</tr>		
+	<!-- end -->
+      </tbody>
+    </table>
+    <div class="panelBar">
+      <div class="pages">
+	<span>共{total}条</span>
+      </div>
+      
+      <div class="pagination" targetType="navTab" totalCount="{total}" numPerPage="{numPerPage}" pageNumShown="10" currentPage="{pageNum}"></div>
+
+    </div>
+  </div>
+</div>

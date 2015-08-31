@@ -1,0 +1,27 @@
+<div style="padding:20px 0 0 50px;">
+<form onsubmit="return validateCallback(this, navTabAjaxDone);" action="passwd_edit.php?action=submit" method="post" class="pageForm required-validate" >
+  <p style="font-size:14px; font-weight:bold; color:#06F; line-height:20px; height:45px;">&nbsp;&nbsp;&nbsp;&nbsp;登陆名:
+    <label for="textfield"></label>
+      <input style="border:1px solid #06F; width:180px; height:20px;" type="text" name="textfield" id="textfield" value="{user[user]}" readonly="true"/>
+  </p>
+  <p style="font-size:14px; font-weight:bold; color:#06F; line-height:20px; height:45px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;姓名:  
+    <label for="textfield2"></label>
+    <input style="border:1px solid #06F; width:180px; height:20px;" type="text" name="textfield2" id="textfield2" value="{user[name]}" readonly="true" />
+  </p>
+  <p style="font-size:14px; font-weight:bold; color:#06F; line-height:20px; height:45px;">&nbsp;&nbsp;&nbsp;&nbsp;原密码: 
+    <label for="textfield3"></label>
+    <input style="border:1px solid #06F; width:180px; height:20px;" type="password" name="origin_pwd" id="textfield3" class="required" />
+  </p>
+  <p style="font-size:14px; font-weight:bold; color:#06F; line-height:20px; height:45px;">&nbsp;&nbsp;&nbsp;&nbsp;新密码:
+    <label for="textfield4"></label>
+    <input style="border:1px solid #06F; width:180px; height:20px;" type="password" name="password" id="textfield4"  class="required" />
+  </p>
+  <p style="font-size:14px; font-weight:bold; color:#06F; line-height:20px; height:45px;">重复输入:
+    <label for="textfield5"></label>
+    <input style="border:1px solid #06F; width:180px; height:20px;" type="password" name="password_repeat" id="textfield5"  class="required"/>
+  </p>
+  <p style=" color:#06F; line-height:20px; height:35px; padding-left:90px;">
+    <input style="border:1px solid #06F; width:180px; height:30px; line-height:30px; font-size:14px; font-weight:bold; width:50px; color:#fff; background-color:#39F;" type="submit" name="button" id="button" value="提交" />
+  </p>
+</form>
+</div>

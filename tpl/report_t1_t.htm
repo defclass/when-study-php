@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>	
+<title>报表</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=9" />
+<link class="include" rel="stylesheet" type="text/css" href="./javascripts/jquery.jqplot.min.css" />  
+<!--[if lt IE 9]><script language="javascript" type="text/javascript" src="./themes/javascripts/excanvas.js"></script><![endif]-->
+<script class="include" type="text/javascript" src="./themes/javascripts/jquery-1.7.2.min.js"></script>
+<style>
+.t_title {font-size:12px;padding-left:40px;}
+</style>
+   
+</head>
+<body>
+<h1><!--{$prod_name}--></h1> <p><!--{$postdate}--></p>
+<div id="chart2" style="margin-top:20px; margin-left:20px;"></div>
+<script class="code" type="text/javascript">
+  $(document).ready(function(){
+        <!--{$num}-->
+        var ticks = [<!--{$x_title}-->];
+        
+        plot2 = $.jqplot('chart2', [<!--{$numname}-->], {
+            seriesDefaults: {
+                renderer:$.jqplot.BarRenderer,
+                pointLabels: { show: true }
+            },
+            axes: {
+                xaxis: {
+                    renderer: $.jqplot.CategoryAxisRenderer,
+                    ticks: ticks
+                }
+            }
+        });
+    });
+</script>
+ 
+<script class="include" type="text/javascript" src="./themes/javascripts/jquery.jqplot.min.js"></script>
+<script class="include" type="text/javascript" src="./themes/javascripts/jqplot.barRenderer.min.js"></script>
+<script class="include" type="text/javascript" src="./themes/javascripts/jqplot.categoryAxisRenderer.min.js"></script>
+<script class="include" type="text/javascript" src="./themes/javascripts/jqplot.pointLabels.min.js"></script>
+
+</body>
+</html>

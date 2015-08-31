@@ -1,0 +1,123 @@
+
+<div class="page">
+  <div class="pageContent">
+    <form method="post" action="{config['website']}/kehuku.php?action=add&flag=add_cust&public_info = {public_info}" class="pageForm required-validate" onsubmit="return validateCallback(this, navTabAjaxDone);">
+      <div class="pageFormContent" layoutH="56">
+        <p>
+	  <label>姓名：</label>
+	  <input name="zs_name" class="required" type="text" size="30" value="" />
+	</p>
+        <p>
+	  <label>性别：</label>
+	  女<input name="sex" type="radio" value="0" checked />男<input name="sex" type="radio" value="1" />
+	</p>
+	<p>
+	  <label>隶属销售：</label>
+	  <select name="admin_id">
+	    <!-- $xs_name AS $xs -->
+	    <option value="{xs[id]}">{xs[name]}</option>
+	    <!-- END -->
+	  </select>
+	</p>
+	<p>
+	  <label>客户地址：</label>
+	  <input name="address" class="required" type="text" size="30" value="" />
+	</p>	
+
+	<p>
+	  <label>职业：</label>
+	  <input name="zy" class="required" type="text" size="30" value="" />
+	</p>
+	<p>
+	  <label>年收入：</label>
+	  <input name="nsr" class="required" type="text" size="30" value="" />
+	</p>
+        <p>
+	  <label>投资经验：</label>
+	  <select name="sf_tz">
+	    <option value="1-2年">1-2年</option>
+	    <option value="3-5年">3-5年</option>
+	    <option value="5-7年">5-7年</option>
+	    <option value="7-9年">7-9年</option>
+	    <option value="10年以上">10年以上</option>
+	  </select>
+	</p>
+	<p>
+	  <label>投资偏好：</label>
+	  <select name="tzph">
+	   <!-- $tzph AS $k=>$p -->
+	    <option value="{k}">{p}</option>
+	    <!-- END -->
+	  </select>
+	</p>
+	<p>
+	  <label>投资时间偏好：</label>
+	  <select name="tzsj_ph">
+	   <!-- $tzsj_ph AS $sj_key=>$sj_v -->
+	    <option value="{sj_key}">{sj_v}</option>
+	    <!-- END -->
+	  </select>
+	</p>
+	<p>
+	  <label>投资工具偏好：</label>
+	  <select name="tzgj_ph">
+	   <!-- $tzgj_ph AS $gj_key=>$gj_v -->
+	    <option value="{gj_key}">{gj_v}</option>
+	    <!-- END -->
+	  </select>
+	</p>
+        <p>
+	  <label>手机1：</label>
+	  <input name="mobile" class="required" type="text" size="30" value="" />
+	</p>
+
+        <p>
+	  <label>手机2：</label>
+	  <input name="mobile2"  type="text" size="30" value="" />
+	</p>
+        
+        <p>
+	  <label>座机：</label>
+	  <input name="tel" class="required" type="text" size="30" value="" />
+	</p>
+        <p>
+	  <label>传真：</label>
+	  <input name="fax" class="required" type="text" size="30" value="" />
+	</p>
+        <p>
+	  <label>邮箱：</label>
+	  <input name="e-mail" class="required" type="text" size="30" value="" />
+	</p>
+        <p>
+	  <label>QQ：</label>
+	  <input name="qq" class="required" type="text" size="30" value="" />
+	</p>
+        <p>
+	  <label>MSN：</label>
+	  <input name="msn" class="required" type="text" size="30" value=""/>
+	</p>
+        <p>
+	  <label>生日：</label>
+	  <input name="birthday" class="required" type="text" size="30" value="" />
+	</p>
+        <p>
+	  <label>爱好：</label>
+	  <input name="ah" class="required" type="text" size="30" value="" />
+	</p>
+        <p>
+	  <label>最后拜访时间：</label>
+	  <input type="text" name="time_bf" size="9" class="date" readonly="true" value=""/>
+	</p>
+        <p>
+	  <label>备注：</label>
+	  <textarea name="remark" cols="30" rows="4"></textarea>
+	</p>
+      </div>
+      <div class="formBar">
+	<ul>
+	  <li><div class="buttonActive"><div class="buttonContent"><button type="submit">保存</button></div></div></li>
+	</ul>
+      </div>
+    </form>
+  </div>
+</div>

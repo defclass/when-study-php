@@ -1,0 +1,43 @@
+
+<style type="text/css">
+.lhb_home{ overflow:hidden;zoom:1; margin:0 auto; margin:20px; width:600px;}
+.bk{ border:1px #b8d0d6 solid; background:#ffffff;padding-left:20px; margin:10px 0;}
+.tjan{border:1px #0054a4 solid;background-repeat:no-repeat;width:60px;height:25px;line-height:25px;font-weight:bold;cursor:pointer;margin:0px 5px; background:#1a68bd; color:#fff; margin-bottom:10px;}
+.tijiao{ margin-top:10px;}
+.dym{ font-size:14px; color:#1a68bd; font-weight:bold; width:70px; line-height:30px;}
+.lhb{ font-size:16px; color:#ff631d; font-weight:bold;}
+</style>
+<div class="lhb_home">
+<form method="post" action="{config['website']}/lhb.php?action=query&do=commit" class="pageForm " onsubmit="return validateCallback(this, navTabAjaxDone);">
+    <div class="bk"><span class="dym">第一名：</span>
+	    <span class="">
+
+		    <select name="dym" id="">
+
+			<!--$first as $f-->
+			<option value="{f[id]}" >{f[name]}</option>
+			    <!--end-->
+		    </select>
+       </span>
+    </div>
+     <div class="bk"><span class="dym">第二名：</span>
+	     <span class="">
+		     <select name="dem" id="">
+			<!--$second as $s-->
+			<option value="{s[id]}" >{s[name]}</option>
+			    <!--end-->
+    		</select>
+       </span>
+    </div>
+     <div class="bk"><span class="dym">第三名：</span>
+	     <span class="">
+		     <select name="dsm" id="">
+			<!--$third as $t-->
+			<option value="{t[id]}" >{t[name]}</option>
+			    <!--end-->
+    		</select>
+       </span>
+    </div>
+    <div align="center" ><button type="submit" class="tjan">保存</button></div>
+    </form>
+</div>

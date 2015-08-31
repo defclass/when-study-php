@@ -1,0 +1,54 @@
+
+<div class="page">
+	<div class="pageHeader">
+		<div class="searchBar">
+			<table class="searchContent">
+				<tr>
+					<td>
+						查询时间:<input type="text" name="time_start" size="9" class="date" readonly="true" value=""/>
+						-<input type="text" name="time_over" size="9" class="date" readonly="true" value=""/>
+					</td>					
+					<td>
+					</td>
+					<td>
+					<div class="buttonActive"><div class="buttonContent"><button type="submit">搜索</button></div></div>
+					</td>
+				</tr>
+			</table>
+		</div>
+	</div>
+	<div class="pageContent">
+		<div class="panelBar">
+			<ul class="toolBar">
+               <li><a class="add" href="daily_new.htm" target="dialog" mask="true"><span>添加</span></a></li>
+				<li><a class="edit" href="daily_edit.htm" target="dialog" mask="true"><span>编辑</span></a></li>
+				<li class="line">line</li>
+				<li><a class="delete" href="" target="ajaxTodo" title="确定要删除吗?"><span>删除</span></a></li>
+				
+			</ul>
+		</div>
+		<table class="list" layouth="91" style="width:1000px;">
+			<thead>
+				<tr>
+					<th align="center">ID</th>
+                    <th align="center">产品名称</th>
+				</tr>
+			</thead>
+			<tbody>			
+
+				<tr target="id" rel="" >
+                    <td align="center">1</td>
+                	<td align="center">产品名称</td>
+				</tr>			
+			</tbody>
+		</table>
+		<div class="panelBar">
+			<div class="pages">
+				<span>共{$total}条</span>
+			</div>
+			
+			<div class="pagination" targetType="navTab" totalCount="{$total}" numPerPage="20" pageNumShown="10" currentPage="{$pageNum}"></div>
+
+		</div>
+	</div>
+</div>

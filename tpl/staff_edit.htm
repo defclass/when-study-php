@@ -1,0 +1,66 @@
+<div class="page">
+  <div class="pageContent">
+    <form method="post" action="{config['website']}/staff.php?action=update&{param}&do=commit" class="pageForm required-validate" onsubmit="return validateCallback(this, navTabAjaxDone);">
+      
+      <div class="pageFormContent" layoutH="56">
+	<p>
+	  <label>登陆名：</label>
+	  <input name="user" class="required" type="text" size="30" value="{staff[user]}" />
+	</p>
+	<p>
+	  <label>姓名：</label>
+	  <input name="name" class="required" type="text" size="30" value="{staff[name]}" />
+	</p>
+	<p>
+	  <label>登陆密码：</label>
+	  <input name="password" class="" type="password" size="30" value="" />
+	</p>
+
+	<p>
+	  <label>确认密码：</label>
+	  <input name="repeat_pw" class="" type="password" size="30" value="" />
+	</p>
+
+
+        
+	<p>
+	  <label>上司：</label>
+	  <select name="fid">
+	    <!-- $xs_name AS $xs -->X
+	    <option value="{xs[id]}">{xs[name]}</option>
+	    <!-- END -->
+	  </select>
+	</p>
+	<p>
+	  <label>权限等级：</label>
+	  <select name="level_id">
+	    <!-- $staff_level AS $sl -->
+	    <option value="{sl[id]}">{sl[level_name]}</option>
+	    <!-- END -->
+	  </select>
+	</p>
+
+	<p>
+	  <label>注册时间：</label>
+	  <input type="text" name="ruzhi_time" size="9" class="date" readonly="true" value="{staff[ruzhi_time]}"/>
+	</p>
+
+	<p>
+	  <label>手机：</label>
+	  <input name="tel" class="required" type="text" size="30" value="{staff[tel]}"/>
+	</p>
+
+
+	<p>
+	  <label>座机：</label>
+	  <input name="phone" class="required" type="text" size="30" value="{staff[phone]}" />
+	</p>
+
+      </div>
+      <div class="formBar">
+	<ul>
+	  <li><div class="buttonActive"><div class="buttonContent"><button type="submit">保存</button></div></div></li>
+	</ul>
+      </div>
+  </div>
+</div>

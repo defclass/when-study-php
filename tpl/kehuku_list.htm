@@ -1,0 +1,120 @@
+<form id="pagerForm" method="post" action="kehuku.php?action=search">
+  <input type="hidden" name="pageNum" value="1" />
+  <input type="hidden" name="numPerPage" value="10" />
+  <input type="hidden" name="admin_name" value="{ygxm}"/>
+  <input type="hidden" name="user_name" value="{user_name}"/>
+  <input type="hidden" name="user_tel" value="{user_tel}"/>
+  <input type="hidden" name="time_start" value="{time_start}"/>
+  <input type="hidden" name="time_over" value="{time_over}"/>
+</form>
+
+
+
+<div class="page">
+  <div class="pageHeader">
+    <form onsubmit="return navTabSearch(this);" action="kehuku.php?action=search" method="post">
+      <div class="searchBar">
+	<table class="searchContent">
+	  <tr>
+	    <td>
+	      员工名称:<input type="text" name="admin_name" size="12" value=""/>
+	    </td>
+	    <td>
+	      客户姓名:<input type="text" name="user_name" size="12" value=""/>
+	    </td>
+	    <td>
+	      客户电话:<input type="text" name="user_tel" size="12" value=""/>
+	    </td>
+	    <td>
+	      拜访时间:
+	      <input type="text" name="time_start" size="9" class="date" value=""/>
+	      -<input type="text" name="time_over" size="9" class="date"  value=""/>
+	    </td>
+	    <td>
+	    </td>					
+	    <td>
+	    </td>
+	    <td>
+	    </td>
+	    <td>
+	      <div class="buttonActive"><div class="buttonContent">
+		  <button type="submit">搜索</button></div></div>
+	    </td>
+	  </tr>
+	</table>
+      </div>
+    </form>
+  </div>
+  <div class="pageContent">
+    <div class="panelBar">
+      <ul class="toolBar">				
+	<li class="line">line</li>
+	<li><a class="add" href="{config['website']}/kehuku.php?action=add" target="dialog" mask="true"  width="1000" height="520"><span>添加新客户</span></a></li>
+	<li><a class="edit" href="{config['website']}/info_edit.php?{param} " target="dialog" mask="true"  width="1000" height="480"><span>修改</span></a></li>
+	<li><a class="delete" href="{config['website']}/info_del.php?{param}" target="ajaxTodo"  title="确定要删除吗?"><span>删除</span></a></li> 
+      </ul>
+    </div>
+    <table class="list" layouth="91">
+      <thead>
+	<tr align="center">
+	  <th align="center">放弃客户</th> 
+          <th align="center">客户姓名</th>	
+          <th align="center">性别</th>
+          <th align="center">职业</th>
+	  <th align="center">年收入</th>
+	  
+          <th align="center">手机</th>		
+	  <th align="center">QQ</th>	
+          <th align="center">创建时间</th>
+	  <th align="center">所属销售</th> 
+	  <th align="center">最后拜访时间</th>
+          <th align="center">备注</th>
+
+
+	  <th align="center">提醒跟单员工</th>
+          <th align="center">拜访记录</th>
+	</tr>
+      </thead>
+      <tbody>		
+	<!--$custs as $v-->	
+	<tr  align=center rel="{v['id']}"  target ="sid_user">
+	  
+	  
+	  <td align="center"><a class="delete" href="{config['website']}/info_change.php?action=fangqi&cid={v['id']}" target="ajaxTodo"  title="是否放弃客户“{v['user_name']}”？"><img src="{config['website']}/tpl/themes/default/img/fangqi.png"></a></td> 
+
+
+	  
+	  
+	  <td><a class="edit" href="{config['website']}/kehuku.php?action=xiangqing&uid={v['id']}" target="dialog" mask="true" resizable="true" width="1100" height="500">{v['user_name']}</a></td>
+
+	  
+          <td>{v[user_sex]}</td>
+          <td>{v['profession']}</td>
+          <td>{v['income_level']}</td>
+
+          <td>{v['user_tel']}</td>
+          <td>{v['qq']}</td>
+          <td>{v['creat_time']}</td>
+	  <td>{v['admin_name']}</td> 
+          <td>{v['last_visit_time']}</td>
+          <td>{v['remark']}</td>
+
+	  <td align="center"><a class="add_alert" href="{config[website]}/message.php?action=new&cust_id={v['id']}&staff_id={v['admin_id']}" target="dialog" mask="true"  width="800" height="200"><span>添加提醒</span></a></td> 
+	  
+
+          <td align="center"><a class="edit" href="{config[website]}/bfjl_detail.php?cust_id={v['id']}" target="dialog" mask="true"  width="800" height="400">查看记录</a></td>
+
+	  <!--end-->
+	</tr>
+      </tbody>
+    </table>
+    <div class="panelBar">
+      <div class="pages">
+	<span>共{total}条</span>
+      </div>
+      
+      <div class="pagination" targetType="navTab" totalCount="{total}" numPerPage="{numPerPage}" pageNumShown="10" currentPage="{current_page}"></div>
+
+    </div>
+  </div>
+</div>

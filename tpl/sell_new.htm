@@ -1,0 +1,73 @@
+<div class="page">
+  <div class="pageContent">
+    <form method="post" action="{config['website']}/sell_new.php?action=add_visit" class="pageForm required-validate" onsubmit="return validateCallback(this, navTabAjaxDone);">
+  
+    <div class="pageFormContent" layoutH="56">
+
+
+	<p>
+	<label>拜访客户名称：</label>
+	<select name="user_id">
+	<!-- $custs AS $cust -->
+	  <option value="{cust[id]}">{cust[user_name]}</option>
+	<!-- END -->
+	</select>
+      </p>
+
+
+
+	<!-- IF[is_array( $xs_name )] -->
+	<p>
+	<label>隶属销售：</label>
+	<select name="admin_id">
+	<!-- $xs_name AS $xs -->
+	  <option value="{xs[id]}">{xs[name]}</option>
+	<!-- END -->
+	</select>
+      </p>
+	<!-- END -->
+
+
+      <p >
+	<label>产品列表：</label>
+	<select name="cp_id">
+	<!-- $products AS $pr -->
+	  <option value="{pr[id]}">{pr[name]}</option>
+	<!-- END -->
+	</select>
+      </p>
+
+      <p>
+	<label>拜访方式：</label>
+	<select name="visit_type">
+	  <option value="0">电话</option>
+	  <option value="1">面谈</option>
+	</select>
+      </p>
+
+      <p>
+	<label>拜访地点：</label>
+	<input name="place" class="required" type="text" size="30" value="" />
+	</select>
+      </p>
+
+      <p>
+	<label>拜访时间：</label>
+	<input name="visit_time" class="required" type="text" size="30" value="{visit_time}" />
+      </p>
+
+
+
+
+      <p>
+	<label>备注：</label>
+	<textarea rows="5" cols="50" class="textInput" name="remark"></textarea>
+      </p>
+    </div>
+    <div class="formBar">
+      <ul>
+	<li><div class="buttonActive"><div class="buttonContent"><button type="submit">保存</button></div></div></li>
+      </ul>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,167 @@
+<link href="{config[website]}/tpl/css/shangchuan.css" rel="stylesheet" type="text/css" />
+<!-- <script type="text/javascript" src='{config[website]}/tpl/js/jquery-1.7.1.js'></script> -->
+ <div class="shangcuan">
+      <div class="shangcuan_nav" style="border:1px #B8D0D6 solid; height:30px; padding-top:18px; background:url(./tpl/images/pageHeader_bg1.png) repeat-x;">
+        <ul>
+          <li style="width:100px; height:29px; padding-top:10x; line-height:29px; text-align:center; color:#03C; font-size:14px;" class=" gs_list" rel="#no1">集团公司</li>
+          <li style="width:100px; height:29px; padding-top:10x; line-height:29px; text-align:center; color:#03C; font-size:14px;" class="gs_list" rel="#no2">融易投</li>
+          <li style="width:100px; height:29px; padding-top:10x; line-height:29px; text-align:center; color:#03C; font-size:14px;" class="gs_list" rel="#no3" >智富东方</li>
+          <li style="width:100px; height:29px; padding-top:10x; line-height:29px; text-align:center; color:#03C; font-size:14px;" class="gs_list" rel="#no4">智富泰达</li>
+<li style="width:100px; height:29px; padding-top:10x; line-height:29px; text-align:center; color:#03C; font-size:14px;" class="gs_list" rel="#no5">市场部</li>          <div style="clear:both"></div>
+        </ul>
+      </div>
+      <div id="shangchuan_main">
+
+	  <form style="border:1px #B8D0D6 solid; height:30px; height:40px; padding-top:10px; background:url({config[website]}/tpl/images/pageHeader_bg1.png) repeat-x; margin-top:10px; padding-left:300px;" method="post" action="{config['website']}/updown_list.php?action=upload&comp_id=1" class="upload pageForm required-validate" onsubmit="return iframeCallback(this, navTabAjaxDone);" enctype="multipart/form-data" >
+	   <input style="margin-left:20px; float:left; height:23px;" type="file" name="file" id="file" />
+	   <div class="buttonActive" style="margin-left:20px;"><div class="buttonContent"><button type="submit">提交</button></div></div>
+	  </form>
+
+	
+        <div id="no1" {yc[no1]}>
+
+           <ul style="padding-left:100px; border-bottom:1px #B8D0D6 dashed; width:750px; _width:950px;">
+            <li style="float:left; width:250PX; text-align:center;">文件名</li>
+   	    <li style="float:left; width:130PX; text-align:center;">上传者</li>
+	    <li style="float:left; width:130PX; text-align:center;">上传时间</li>
+	    <li style="float:left; width:130PX; text-align:center;">文件大小</li>
+        
+            <DIV style="clear:both;"></DIV>
+           </ul>
+
+	   <!-- $jt_files as $jt_f -->
+          <ul style="padding-left:100px; border-bottom:1px #B8D0D6 dashed; width:750px; _width:950px;">
+            <li style="float:left; width:250PX; text-align:center;"><a href="{config[website]}/updown_list.php?action=down&id={jt_f[id]}">{jt_f[file_name]}</a></li>
+	    <li style="float:left; width:130PX; text-align:center;">{jt_f[admin_name]}</li>
+	    <li style="float:left; width:130PX; text-align:center;">{jt_f[upload_time]}</li>
+	    <li style="float:left; width:130PX; text-align:center;">{jt_f[size]}</li>
+     
+	    <!-- if [ $level_id == '1'] -->	<li><a  href="{config[website]}/updown_list.php?action=del&id={jt_f[id]}" target="ajaxTodo"  title="确定要删除吗?"><b>删除</b></a></li> <!-- end -->
+            <DIV style="clear:both;"></DIV>
+           </ul>
+	  <!-- end -->
+        </div>
+        <div id="no2" {yc[no2]}>
+	  <ul style="padding-left:100px; border-bottom:1px #B8D0D6 dashed; width:750px; _width:950px;">
+            <li style="float:left; width:250PX; text-align:center;">文件名</li>
+   
+	    <li style="float:left; width:130PX; text-align:center;">上传者</li>
+	    <li style="float:left; width:130PX; text-align:center;">上传时间</li>
+	    <li style="float:left; width:130PX; text-align:center;">文件大小</li>
+        
+            <DIV style="clear:both;"></DIV>
+           </ul>
+
+	   <!-- $ryt_files as $ryt_f -->
+          <ul style="padding-left:100px; border-bottom:1px #B8D0D6 dashed; width:750px; _width:950px;">
+            <li style="float:left; width:250PX; text-align:center;"><a href="{config[website]}/updown_list.php?action=down&id={ryt_f[id]}">{ryt_f[file_name]}</a></li>
+	    <li style="float:left; width:130PX; text-align:center;">{ryt_f[admin_name]}</li>
+	    <li style="float:left; width:130PX; text-align:center;">{ryt_f[upload_time]}</li>
+	    <li style="float:left; width:130PX; text-align:center;">{ryt_f[size]}</li>
+	    <!-- if [ $level_id == '1'] -->	<li><a  href="{config[website]}/updown_list.php?action=del&id={ryt_f[id]}" target="ajaxTodo"  title="确定要删除吗?"><b>删除</b></a></li> <!-- end -->
+	    <DIV style="clear:both;"></DIV>
+           </ul>
+	  <!-- end -->
+
+        </div>
+
+        <div id="no3" {yc[no3]}>
+          <ul style="padding-left:100px; border-bottom:1px #B8D0D6 dashed; width:750px; _width:950px;">
+            <li style="float:left; width:250PX; text-align:center;">文件名</li>
+   
+	    <li style="float:left; width:130PX; text-align:center;">上传者</li>
+	    <li style="float:left; width:130PX; text-align:center;">上传时间</li>
+	    <li style="float:left; width:130PX; text-align:center;">文件大小</li>
+        
+            <DIV style="clear:both;"></DIV>
+           </ul>
+
+	   <!-- $zfdf_files as $zfdf_f -->
+          <ul style="padding-left:100px; border-bottom:1px #B8D0D6 dashed; width:750px; _width:950px;">
+            <li style="float:left; width:250PX; text-align:center;"><a href="{config[website]}/updown_list.php?action=down&id={zfdf_f[id]}">{zfdf_f[file_name]}</a></li>
+	    <li style="float:left; width:130PX; text-align:center;">{zfdf_f[admin_name]}</li>
+	    <li style="float:left; width:130PX; text-align:center;">{zfdf_f[upload_time]}</li>
+	    <li style="float:left; width:130PX; text-align:center;">{zfdf_f[size]}</li>
+	    <!-- if [ $level_id == '1'] -->	<li><a  href="{config[website]}/updown_list.php?action=del&id={zfdf_f[id]}" target="ajaxTodo"  title="确定要删除吗?"><b>删除</b></a></li> <!-- end -->
+	    <DIV style="clear:both;"></DIV>
+           </ul>
+	  <!-- end -->
+        </div>
+        <div id="no4" {yc[no4]}>
+            <ul style="padding-left:100px; border-bottom:1px #B8D0D6 dashed; width:750px; _width:950px;">
+            <li style="float:left; width:250PX; text-align:center;">文件名</li>
+   
+	    <li style="float:left; width:130PX; text-align:center;">上传者</li>
+	    <li style="float:left; width:130PX; text-align:center;">上传时间</li>
+	    <li style="float:left; width:130PX; text-align:center;">文件大小</li>
+        
+            <DIV style="clear:both;"></DIV>
+           </ul>
+
+	   <!-- $zftd_files as $zftd_f -->
+          <ul style="padding-left:100px; border-bottom:1px #B8D0D6 dashed; width:750px; _width:950px;">
+            <li style="float:left; width:250PX; text-align:center;"><a href="{config[website]}/updown_list.php?action=down&id={zftd_f[id]}">{zftd_f[file_name]}</a></li>
+	    <li style="float:left; width:130PX; text-align:center;">{zftd_f[admin_name]}</li>
+	    <li style="float:left; width:130PX; text-align:center;">{zftd_f[upload_time]}</li>
+	    <li style="float:left; width:130PX; text-align:center;">{zftd_f[size]}</li>
+	    <!-- if [ $level_id == '1'] -->	<li><a  href="{config[website]}/updown_list.php?action=del&id={zftd_f[id]}" target="ajaxTodo"  title="确定要删除吗?"><b>删除</b></a></li> <!-- end -->
+	    <DIV style="clear:both;"></DIV>
+           </ul>
+	  <!-- end -->
+        </div>
+
+	<div id="no5" {yc[no5]}>
+            <ul style="padding-left:100px; border-bottom:1px #B8D0D6 dashed; width:750px; _width:950px;">
+            <li style="float:left; width:250PX; text-align:center;">文件名</li>
+   
+	    <li style="float:left; width:130PX; text-align:center;">上传者</li>
+	    <li style="float:left; width:130PX; text-align:center;">上传时间</li>
+	    <li style="float:left; width:130PX; text-align:center;">文件大小</li>
+        
+            <DIV style="clear:both;"></DIV>
+           </ul>
+
+	   <!-- $scb_files as $scb_f -->
+          <ul style="padding-left:100px; border-bottom:1px #B8D0D6 dashed; width:750px; _width:950px;">
+            <li style="float:left; width:250PX; text-align:center;"><a href="{config[website]}/updown_list.php?action=down&id={scb_f[id]}">{scb_f[file_name]}</a></li>
+	    <li style="float:left; width:130PX; text-align:center;">{scb_f[admin_name]}</li>
+	    <li style="float:left; width:130PX; text-align:center;">{scb_f[upload_time]}</li>
+	    <li style="float:left; width:130PX; text-align:center;">{scb_f[size]}</li>
+	    <!-- if [ $level_id == '1'] -->	<li><a  href="{config[website]}/updown_list.php?action=del&id={scb_f[id]}" target="ajaxTodo"  title="确定要删除吗?"><b>删除</b></a></li> <!-- end -->
+	    <DIV style="clear:both;"></DIV>
+           </ul>
+	  <!-- end -->
+        </div>
+      
+    </div>
+    
+    <script type="text/javascript">
+$(function(){
+    $(".gs_list").live('click',function(){
+      $('.gs_list').removeClass("dianji");
+      $(this).addClass("dianji");
+       var bianliang = $(this).attr("rel");
+       
+        //传的ID值
+      var comp_id = "{config[website]}/updown_list.php?action=upload&comp_id=";
+      var reg = /\d/;
+      var num = reg.exec(bianliang);
+      comp_id +=num;
+
+
+      var no = "no"+num;
+      comp_id +="&no="+no;
+
+      //修改Action的值
+      $(".upload").attr("action",comp_id);
+      $("#shangchuan_main").children("div").hide();
+
+      $(bianliang).show();
+     });
+
+});
+
+
+
+    </script>
+  </div>

@@ -1,0 +1,114 @@
+<div class="page">
+  <div class="pageContent">
+    <form method="post" action="{config['website']}/info_edit.php?action=edit_cust&{param}" class="pageForm required-validate" onsubmit="return validateCallback(this, navTabAjaxDone);">
+    <input type="hidden" style="display:none;" name="id" value=""/>
+    <div class="pageFormContent" layoutH="56">
+      <p>
+	<label>姓名：</label>
+	<input name="zs_name" class="required" type="text" size="30" value="{cust[user_name]}" />
+      </p>
+
+      <p>
+	<label>性别：</label>
+	女<input name="sex" type="radio" value="0"  <!-- IF[ $cust['user_sex'] == 0  ] --> checked="checked"  <!-- END -->  /> 
+	男<input name="sex" type="radio" value="1"  <!-- IF[ $cust['user_sex'] == 1  ] --> checked="checked"  <!-- END -->  /> 
+      </p> 
+
+    	<!-- IF[$public_info !==1 && !empty( $xs_name )] -->
+	<p>
+	<label>隶属销售：</label>
+	<select name="admin_id">
+	<!-- $xs_name AS $xs -->
+	  <option value="{xs[id]}">{xs[name]}</option>
+	<!-- END -->
+	</select>
+      </p>
+
+	<!-- ELSE -->
+
+	<!-- END -->
+
+
+      <p>
+	<label>客户地址：</label>
+	<input name="address" class="required" type="text" size="30" value="{cust[user_address]}" />
+      </p>	
+
+      <p>
+	<label>职业：</label>
+	<input name="zy" class="required" type="text" size="30" value="{cust[profession]}" />
+      </p>
+
+      <p>
+	<label>年收入：</label>
+	<input name="nsr" class="required" type="text" size="30" value="{cust[income_level]}" />
+      </p>
+
+        <p>
+	  <label>投资经验：</label>
+	  <select name="sf_tz">
+	    <option value="{cust[sf_tz]}">{cust[sf_tz]}</option>
+	    <option value="1-2年">1-2年</option>
+	    <option value="3-5">3-5年</option>
+	    <option value="5-7年">5-7年</option>
+	    <option value="7-9年">7-9年</option>
+	    <option value="10年以上">10年以上</option>
+	  </select>
+	</p>
+
+      <p>
+	<label>手机1：</label>
+	<input name="mobile" class="required" type="text" size="30" value="{cust[user_tel]}" />
+      </p>
+      
+      <p>
+	<label>手机2：</label>
+	<input name="mobile2"  type="text" size="30" value="{cust[user_tel2]}" />
+      </p>
+
+      <p>
+	<label>座机：</label>
+	<input name="tel" class="required" type="text" size="30" value="{cust[user_phone]}" />
+      </p>
+      <p>
+	<label>传真：</label>
+	<input name="fax" class="required" type="text" size="30" value="{cust[user_fax]}" />
+      </p>
+      <p>
+	<label>邮箱：</label>
+	<input name="e-mail" class="required" type="text" size="30" value="{cust[user_email]}" />
+      </p>
+      <p>
+	<label>QQ：</label>
+	<input name="qq" class="required" type="text" size="30" value="{cust[qq]}" />
+      </p>
+      <p>
+	<label>MSN：</label>
+	<input name="msn" class="required" type="text" size="30" value="{cust[msn]}"/>
+      </p>
+      <p>
+	<label>生日：</label>
+	<input name="birthday" class="required" type="text" size="30" value="{cust[bir]}" />
+      </p>
+      <p>
+	<label>爱好：</label>
+	<input name="ah" class="required" type="text" size="30" value="{cust[favorite]}" />
+      </p>
+
+      <p>
+	<label>最后拜访时间：</label>
+	<input type="text" name="time_bf" size="9" class="date" readonly="true" value="{cust[last_visit_time]}"/>
+      </p>
+      <p>
+	<label>备注：</label>
+	<textarea name="remark" cols="30" rows="4" >{cust[remark]}</textarea>
+      </p>
+    </div>
+    <div class="formBar">
+      <ul>
+	<li><div class="close"><div class="buttonContent"><button type="submit" >保存</button></div></div></li>
+
+      </ul>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>智富联盟企业后台管理系统</title>
+<link rel='stylesheet' href='{config[website]}/tpl/themes/css/login.css' type='text/css' />
+
+</head>
+<body>
+
+<div id="login">
+<h1><a href="#" title="">智富联盟企业后台管理系统</a></h1> 
+<form name="user_info" >
+	<p>
+		<label>帐号：</label>
+		<input class="input" name="username" size="20" type="text" />
+	</p>
+	<p>
+		<label>密码：</label>
+		<input class="input" name="password" size="20" type="password" />
+	</p>
+    <p>
+		<label>验证码：<input id="absmiddle"  name="code" size="10" type="code" /><img id = "imgcode" align="absmiddle" src="code.php" onclick=" newcode('{config[website]}/code.php?timeamp=') "><a style="font-size:12px;" href="javascript:newcode('{config[website]}/code.php?timeamp=')">不清楚?</a></label>
+		
+	</p>
+    <p>&nbsp;<span id="msg" class="msg"></span> </p>
+	<p class="submit">
+		<input id="button-primary" class="button-primary" name="登录" type="button" onclick=" m_login()" value="登录" />
+	</p>
+    </form>
+</div>
+</body>
+<script type="text/javascript" src='{config[website]}/tpl/js/login.js'></script>
+<!-- <script type="application/javascript" src='{config[website]}/tpl/js/login.js'></script> -->
+<!-- 要想在所有浏览器兼容，应使用text/javascript, application/javascript虽然是正确的写法，但会导致一些不兼容 -->
+</html>
+
+
